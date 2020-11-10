@@ -1,0 +1,35 @@
+{
+  "name": "travil",
+  "version": "1.0.0",
+  "description": "Travel and Living essentials application layout design. Built using CSS3 Flexbox",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w", 
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/third-party.css css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divakarrana/Travil.git"
+  },
+  "author": "Divakar Rana",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "concat": "^1.0.3",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^8.2.0",
+    "postcss-scss": "^3.0.4"
+  },
+  "bugs": {
+    "url": "https://github.com/divakarrana/Travil/issues"
+  },
+  "homepage": "https://github.com/divakarrana/Travil#readme"
+}
